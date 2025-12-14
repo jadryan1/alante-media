@@ -12,9 +12,21 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <script>
+    // Apply theme immediately to prevent flash
+    (function () {
+      const savedTheme = localStorage.getItem('colorTheme') || 'burgundy';
+      const themeClass = savedTheme + '-theme';
+      document.documentElement.className = themeClass;
+      // Also set on body if it exists (for faster initial render)
+      if (document.body) {
+        document.body.className = themeClass;
+      }
+    })();
+  </script>
 </head>
 
-<body class="light-mode">
+<body>
   <header class="header">
     <div class="header-left">
       <button class="menu-btn" aria-label="Menu">
@@ -28,23 +40,25 @@
     </div>
 
     <div class="header-center">
-      <div class="logo-monogram">
-        <img src="./assets/logos/Alante Logo Vector.svg" alt="Alanté" class="logo-svg">
-        <div class="scrolled-logo-text">
-          <span class="logo-main">ALANTÉ</span>
-          <span class="logo-subtitle">media consulting</span>
+      <a href="./index.html" class="logo-link">
+        <div class="logo-monogram">
+          <img src="./assets/logos/Alante Logo Vector.svg" alt="Alanté" class="logo-svg">
+          <div class="scrolled-logo-text">
+            <span class="logo-main">ALANTÉ</span>
+            <span class="logo-subtitle">media consulting</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="header-right">
-      <button class="find-btn" aria-label="Find a Consultant">
+      <a href="./book-consultation.html" class="find-btn" aria-label="Book a Consultation">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
         <span>Book a Consultation</span>
-      </button>
+      </a>
     </div>
   </header>
 
@@ -61,24 +75,22 @@
     <nav class="menu-nav">
       <a href="#" class="menu-link">Portfolio</a>
       <a href="./who-we-are.html" class="menu-link">Who We Are</a>
-      <a href="#" class="menu-link">What We Do</a>
-      <a href="#" class="menu-link">Contact</a>
+      <a href="./what-we-do.html" class="menu-link">What We Do</a>
+      <a href="./contact.html" class="menu-link">Contact</a>
       <a href="./index.html" class="menu-link">Home</a>
     </nav>
 
     <div class="theme-selector">
-      <span class="theme-label">Color Theme</span>
-      <div class="theme-options">
-        <button class="theme-btn" data-theme="burgundy" aria-label="Burgundy Theme">
-          <span class="theme-color" style="background: #280505;"></span>
-        </button>
-        <button class="theme-btn" data-theme="black" aria-label="Black Theme">
-          <span class="theme-color" style="background: #000000;"></span>
-        </button>
-        <button class="theme-btn" data-theme="cream" aria-label="Cream Theme">
-          <span class="theme-color" style="background: #F5F0E8;"></span>
-        </button>
-      </div>
+      <span class="theme-label">Theme</span>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="toggle-labels">
+          <span class="label-dark">Dark</span>
+          <span class="label-light">Light</span>
+        </span>
+      </button>
     </div>
   </div>
 
@@ -94,36 +106,42 @@
       </div>
     </section>
 
-    <!-- Strategy Section -->
+    <!-- Industry Expertise Section -->
     <section class="scroll-section panel">
       <div class="panel-bg strategy-bg"></div>
       <div class="content-wrapper left-align">
-        <span class="eyebrow">The Blueprint</span>
-        <h2>Strategy First</h2>
-        <p>We design end-to-end strategic blueprints, guaranteeing your success over scattered content efforts.</p>
-        <button class="cta-button text-link">Explore Strategy</button>
+        <span class="eyebrow">Industry-First Expertise</span>
+        <h2>Built by Insiders</h2>
+        <p>We're not just marketers—we're service industry veterans. Our years operating across diverse business
+          environments give us an insider's perspective that traditional agencies lack. We understand your operational
+          realities, your team's pressures, and what truly drives customer loyalty.</p>
+        <a href="./who-we-are.html" class="cta-button text-link">Learn Our Story</a>
       </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- Authentic Storytelling Section -->
     <section class="scroll-section panel">
       <div class="panel-bg process-bg"></div>
       <div class="content-wrapper right-align">
-        <span class="eyebrow">The Execution</span>
-        <h2>Accountable Process</h2>
-        <p>Our execution process is verifiable, ensuring actual business expansion and tangible ROI.</p>
-        <button class="cta-button text-link">View Process</button>
+        <span class="eyebrow">Authentic Storytelling</span>
+        <h2>Your Story, Amplified</h2>
+        <p>We partner with you to uncover what makes your business truly special. Instead of pushing unnecessary
+          changes, we discover the inherent beauty and unique essence already there—your authentic story—and translate
+          it into a compelling narrative that builds lasting customer engagement.</p>
+        <a href="./what-we-do.html" class="cta-button text-link">See Our Approach</a>
       </div>
     </section>
 
-    <!-- Brand Section -->
+    <!-- Performance Excellence Section -->
     <section class="scroll-section panel">
       <div class="panel-bg brand-bg"></div>
       <div class="content-wrapper center-align">
-        <span class="eyebrow">The Identity</span>
-        <h2>Brand Loyalty</h2>
-        <p>We define cohesive brand identities that your customers will genuinely feel a part of.</p>
-        <button class="cta-button text-link">See Our Work</button>
+        <span class="eyebrow">Performance-Driven Excellence</span>
+        <h2>Results That Matter</h2>
+        <p>We're committed to tangible business outcomes, not vanity metrics. Our concepts are tied to real
+          performance—driving customer traffic and experiences your business is equipped to deliver, maximizing
+          satisfaction and long-term growth.</p>
+        <a href="#" class="cta-button text-link">View Our Work</a>
       </div>
     </section>
 

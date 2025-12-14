@@ -1,44 +1,42 @@
-// Import shared menu and theme logic
-// Theme Selector Logic
+// Theme Toggle Logic
 const body = document.body;
-const savedTheme = localStorage.getItem('colorTheme') || 'black';
-body.className = savedTheme === 'black' ? 'light-mode' : `${savedTheme}-theme`;
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('colorTheme') || 'burgundy'; // Default to burgundy
+// Apply theme immediately to both html and body
+body.className = `${savedTheme}-theme`;
+html.className = `${savedTheme}-theme`;
 
-// Theme selector buttons
-const themeButtons = document.querySelectorAll('.theme-btn');
+// Theme toggle button
+const themeToggle = document.querySelector('.theme-toggle');
 
-// Set initial active state
-const setActiveTheme = (theme) => {
-    themeButtons.forEach(btn => {
-        if (btn.dataset.theme === theme) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
+// Set initial toggle state
+const updateToggleState = (theme) => {
+    if (theme === 'cream') {
+        themeToggle.classList.add('light');
+    } else {
+        themeToggle.classList.remove('light');
+    }
 };
 
-setActiveTheme(savedTheme);
+updateToggleState(savedTheme);
 
-// Add click handlers
-themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const theme = btn.dataset.theme;
+// Add click handler
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.className.replace('-theme', '');
+        const newTheme = currentTheme === 'burgundy' ? 'cream' : 'burgundy';
 
-        // Update body class
-        if (theme === 'black') {
-            body.className = 'light-mode';
-        } else {
-            body.className = `${theme}-theme`;
-        }
+        // Update body and html class
+        body.className = `${newTheme}-theme`;
+        html.className = `${newTheme}-theme`;
 
         // Save to localStorage
-        localStorage.setItem('colorTheme', theme);
+        localStorage.setItem('colorTheme', newTheme);
 
-        // Update active state
-        setActiveTheme(theme);
+        // Update toggle state
+        updateToggleState(newTheme);
     });
-});
+}
 
 // Menu Toggle Logic
 const menuBtn = document.querySelector('.menu-btn');
@@ -56,6 +54,61 @@ if (menuBtn && sideMenu && closeMenuBtn) {
         document.body.style.overflow = '';
     });
 }
+
+// Founder Navigation Logic
+const heroSection = document.querySelector('#hero-section');
+const founderCards = document.querySelectorAll('.hero-founder');
+const founderDetailSections = document.querySelectorAll('.founder-detail-section');
+const backArrows = document.querySelectorAll('.back-arrow');
+const scrollContainer = document.querySelector('.scroll-container');
+
+// Click on founder card to show detail
+founderCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const founderId = card.dataset.founder;
+        const detailSection = document.querySelector(`#${founderId}-detail`);
+
+        if (detailSection) {
+            // Hide hero section
+            heroSection.style.display = 'none';
+
+            // Show the selected founder detail section
+            detailSection.classList.add('active');
+            detailSection.classList.add('visible');
+
+            // Scroll to top of detail section
+            scrollContainer.scrollTo({
+                top: detailSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Click back arrow to return to hero
+backArrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+        // Hide all detail sections
+        founderDetailSections.forEach(section => {
+            section.classList.remove('active');
+            section.classList.remove('visible');
+        });
+
+        // Show hero section
+        heroSection.style.display = 'flex';
+
+        // Scroll to hero section
+        scrollContainer.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+        // Re-trigger visibility animation
+        setTimeout(() => {
+            heroSection.classList.add('visible');
+        }, 100);
+    });
+});
 
 // Carousel functionality
 class Carousel {
@@ -163,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.5 });
 
-    const heroSection = document.querySelector('.page-hero');
     if (heroSection) {
         headerObserver.observe(heroSection);
     }

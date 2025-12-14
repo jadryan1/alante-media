@@ -1,0 +1,338 @@
+/* What We Do Page Styles */
+
+/* Override body overflow to enable scrolling on this page */
+body {
+    overflow: auto !important;
+}
+
+.services-main {
+    min-height: 100vh;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+
+/* Hero Section */
+.services-hero {
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.services-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: var(--font-sans);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Services Overview Section */
+.services-overview {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+    background: var(--bg-color);
+}
+
+.overview-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview-intro h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.overview-intro p {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+/* Service Pillar */
+.service-pillar {
+    margin-bottom: 8rem;
+    position: relative;
+}
+
+.service-pillar:last-of-type {
+    margin-bottom: 4rem;
+}
+
+.pillar-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.pillar-number {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    opacity: 0.6;
+}
+
+.pillar-header h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.pillar-description {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 900px;
+}
+
+/* Service Cards */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body.cream-theme .service-card {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+body.cream-theme .service-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card h4 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.service-card>p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.service-features li {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-color);
+    opacity: 0.75;
+    padding-left: 1.75rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* CTA Section */
+.services-cta {
+    background: #000000;
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-cta h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.services-cta p {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    color: #ffffff;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.services-cta .cta-button.primary {
+    background: transparent;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.services-cta .cta-button.primary:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-hero {
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .services-overview {
+        padding: 3rem 1.5rem 4rem;
+    }
+
+    .overview-intro {
+        margin-bottom: 4rem;
+    }
+
+    .service-pillar {
+        margin-bottom: 5rem;
+    }
+
+    .pillar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .pillar-number {
+        font-size: 2rem;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .services-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .pillar-description {
+        font-size: 1rem;
+    }
+
+    .service-card>p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Dark/Light Theme Animations */
+.service-card,
+.service-pillar,
+.services-hero,
+.services-cta {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

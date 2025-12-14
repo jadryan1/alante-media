@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    z-index: 1;
 }
 
 /* Content wrapper fade-in */
@@ -41,13 +42,25 @@
 
 /* Page Hero */
 .page-hero {
-    padding: 6rem 15% 8rem 15%;
+    padding: 10rem 15% 8rem 15%;
     text-align: center;
 }
 
 .page-hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .eyebrow {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .page-hero h1 {
@@ -65,84 +78,180 @@
     line-height: 1.6;
     opacity: 0.85;
     max-width: 600px;
+    margin: 0 auto 4rem auto;
+}
+
+/* Hero Founders */
+.hero-founders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 700px;
     margin: 0 auto;
+}
+
+.hero-founder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.hero-founder:hover {
+    transform: translateY(-8px);
+}
+
+.hero-founder:hover .hero-founder-image {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero-founder-image {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 200px;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-founder:hover .hero-founder-image img {
+    transform: scale(1.1);
+}
+
+.hero-founder-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
+}
+
+.hero-founder:hover .hero-founder-name {
+    opacity: 0.7;
+}
+
+.hero-founder-title {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
+    text-align: center;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.hero-founder:hover .hero-founder-title {
+    opacity: 0.8;
+}
+
+.hero-founder-hint {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color);
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.hero-founder:hover .hero-founder-hint {
+    opacity: 0.5;
+    transform: translateY(0);
+}
+
+/* Founder Detail Sections */
+.founder-detail-section {
+    display: none;
+    padding: 12rem 10% 4rem 10%;
+    justify-content: center;
+}
+
+.founder-detail-section.active {
+    display: flex;
+}
+
+/* Back Arrow */
+.back-arrow {
+    position: fixed;
+    top: 8rem;
+    left: 13%;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-arrow:hover {
+    opacity: 1;
+    transform: translateX(-4px);
+}
+
+.back-arrow svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Founders Section */
 .founder-section {
-    padding: 0 10%;
+    padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
+.founder-profile {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
 .founder-content {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: start;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    max-width: 1400px;
+    width: 100%;
 }
 
 .founder-profile.reverse .founder-content {
-    grid-template-columns: 1.2fr 1fr;
-}
-
-.founder-profile.reverse .founder-image-main {
-    order: 2;
-}
-
-.founder-profile.reverse .founder-info {
-    order: 1;
-    text-align: right;
-}
-
-/* Founder Image */
-.founder-image-main {
-    position: relative;
-    aspect-ratio: 3/4;
-    overflow: hidden;
-}
-
-.image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    transition: all 0.4s ease;
-}
-
-.image-placeholder:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Cream theme image placeholders */
-body.cream-theme .image-placeholder {
-    background: linear-gradient(135deg, rgba(139, 26, 26, 0.03) 0%, rgba(183, 110, 121, 0.02) 100%);
-    border: 1px solid rgba(139, 26, 26, 0.15);
-    color: rgba(62, 39, 35, 0.4);
-}
-
-body.cream-theme .image-placeholder:hover {
-    background: linear-gradient(135deg, rgba(139, 26, 26, 0.06) 0%, rgba(183, 110, 121, 0.04) 100%);
-    border-color: rgba(139, 26, 26, 0.25);
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Founder Info */
 .founder-info {
-    padding-top: 2rem;
+    padding-top: 0;
 }
 
 .founder-name {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
     letter-spacing: -0.01em;
@@ -154,20 +263,60 @@ body.cream-theme .image-placeholder:hover {
     text-transform: uppercase;
     letter-spacing: 0.25em;
     opacity: 0.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .founder-bio {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
     font-weight: 300;
     opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Founder Interests */
+.founder-interests {
+    margin-top: 2rem;
+}
+
+.interests-title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.interests-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+}
+
+.interests-list li {
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.85;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.interests-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
 }
 
 /* Carousel */
 .founder-carousel {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 
 .carousel-container {
@@ -207,6 +356,21 @@ body.cream-theme .image-placeholder:hover {
 .carousel-image-placeholder:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
     border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Carousel Images */
+.carousel-slide img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body.cream-theme .carousel-slide img {
+    background: rgba(245, 240, 232, 0.3);
 }
 
 /* Cream theme carousel placeholders */
@@ -309,23 +473,6 @@ body.cream-theme .dot.active {
     background: #8B1A1A;
 }
 
-/* Founder Divider */
-.founder-divider {
-    height: 1px;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            transparent 100%);
-    margin: 8rem 0;
-}
-
-body.cream-theme .founder-divider {
-    background: linear-gradient(90deg,
-            transparent 0%,
-            rgba(139, 26, 26, 0.2) 50%,
-            transparent 100%);
-}
-
 /* Philosophy Section */
 .philosophy-section {
     padding: 8rem 15%;
@@ -346,6 +493,8 @@ body.cream-theme .philosophy-section {
 .philosophy-content {
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .philosophy-content h2 {
@@ -365,6 +514,19 @@ body.cream-theme .philosophy-section {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .hero-founders {
+        gap: 4rem;
+        max-width: 600px;
+    }
+
+    .hero-founder-image {
+        max-width: 160px;
+    }
+
+    .hero-founder-name {
+        font-size: 1.3rem;
+    }
+
     .founder-content {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -372,15 +534,6 @@ body.cream-theme .philosophy-section {
 
     .founder-profile.reverse .founder-content {
         grid-template-columns: 1fr;
-    }
-
-    .founder-profile.reverse .founder-image-main {
-        order: 1;
-    }
-
-    .founder-profile.reverse .founder-info {
-        order: 2;
-        text-align: left;
     }
 
     .page-hero h1 {
@@ -394,6 +547,15 @@ body.cream-theme .philosophy-section {
     .philosophy-content h2 {
         font-size: 2.5rem;
     }
+
+    .back-arrow {
+        top: 6rem;
+        left: 8%;
+    }
+
+    .founder-detail-section {
+        padding: 10rem 8% 4rem 8%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -402,7 +564,7 @@ body.cream-theme .philosophy-section {
     }
 
     .page-hero {
-        padding: 4rem 5% 6rem 5%;
+        padding: 7rem 5% 6rem 5%;
     }
 
     .page-hero h1 {
@@ -413,8 +575,24 @@ body.cream-theme .philosophy-section {
         font-size: 1.1rem;
     }
 
-    .founders-section {
-        padding: 0 5%;
+    .hero-founders {
+        gap: 3rem;
+    }
+
+    .hero-founder-image {
+        max-width: 140px;
+    }
+
+    .hero-founder-name {
+        font-size: 1.2rem;
+    }
+
+    .hero-founder-title {
+        font-size: 0.6rem;
+    }
+
+    .founder-detail-section {
+        padding: 8rem 5% 3rem 5%;
     }
 
     .founder-content {
@@ -426,7 +604,7 @@ body.cream-theme .philosophy-section {
     }
 
     .founder-bio {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .carousel-btn {
@@ -452,5 +630,10 @@ body.cream-theme .philosophy-section {
 
     .philosophy-content p {
         font-size: 1.05rem;
+    }
+
+    .back-arrow {
+        top: 5rem;
+        left: 5%;
     }
 }

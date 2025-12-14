@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Alanté Media Consulting</title>
+    <meta name="description"
+        content="Get in touch with Alanté Media Consulting. Connect with us via Instagram or email, or book a consultation directly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./contact.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function () {
+            const savedTheme = localStorage.getItem('colorTheme') || 'burgundy';
+            const themeClass = savedTheme + '-theme';
+            document.documentElement.className = themeClass;
+            // Also set on body if it exists (for faster initial render)
+            if (document.body) {
+                document.body.className = themeClass;
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header scrolled">
+        <div class="header-left">
+            <button class="menu-btn" aria-label="Menu">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
+                    <rect width="18" height="1.5"></rect>
+                    <rect y="5" width="18" height="1.5"></rect>
+                    <rect y="10" width="12" height="1.5"></rect>
+                </svg>
+                <span>Menu</span>
+            </button>
+        </div>
+
+        <div class="header-center">
+            <a href="./index.html" class="logo-link">
+                <div class="logo-monogram">
+                    <img src="./assets/logos/Alante Logo Vector.svg" alt="Alanté" class="logo-svg">
+                    <div class="scrolled-logo-text">
+                        <span class="logo-main">ALANTÉ</span>
+                        <span class="logo-subtitle">media consulting</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <a href="./index.html" class="back-link" aria-label="Back to Home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <div class="side-menu" id="side-menu">
+        <button class="close-menu-btn" aria-label="Close Menu">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="1" y1="1" x2="13" y2="13"></line>
+                <line x1="1" y1="13" x2="13" y2="1"></line>
+            </svg>
+            <span>CLOSE</span>
+        </button>
+
+        <nav class="menu-nav">
+            <a href="#" class="menu-link">Portfolio</a>
+            <a href="./who-we-are.html" class="menu-link">Who We Are</a>
+            <a href="./what-we-do.html" class="menu-link">What We Do</a>
+            <a href="./contact.html" class="menu-link">Contact</a>
+            <a href="./index.html" class="menu-link">Home</a>
+        </nav>
+
+        <div class="theme-selector">
+            <span class="theme-label">Theme</span>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="toggle-track">
+                    <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-labels">
+                    <span class="label-dark">Dark</span>
+                    <span class="label-light">Light</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <main class="contact-container">
+        <div class="contact-content">
+            <!-- Page Header -->
+            <div class="contact-header">
+                <span class="eyebrow">Get in Touch</span>
+                <h1>Contact Us</h1>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="contact-grid">
+                <!-- Left: Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Let's Connect</h2>
+                    <p class="contact-intro">We're here to help elevate your brand. Reach out through any of the
+                        channels below, or submit a consultation request.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="method-details">
+                                <h3>Instagram</h3>
+                                <a href="https://instagram.com/alantemediaconsulting" target="_blank"
+                                    rel="noopener noreferrer">@alantemediaconsulting</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="method-details">
+                                <h3>Email</h3>
+                                <a href="mailto:alantemediaconsulting@gmail.com">alantemediaconsulting@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <p>We typically respond within 24-48 hours during business days.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Compact Consultation Form -->
+                <div class="contact-form-section">
+                    <h2>Quick Consultation Request</h2>
+                    <form class="compact-consultation-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="4" required
+                                placeholder="Tell us about your needs..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="form-status" id="form-status"></div>
+
+                        <div class="form-footer">
+                            <p>Need more options? <a href="./book-consultation.html">Book a full consultation</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/contact.js"></script>
+</body>
+
+</html>
