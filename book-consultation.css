@@ -316,49 +316,106 @@ body.cream-theme .form-group select {
 /* Responsive Design */
 @media (max-width: 768px) {
     .consultation-container {
-        padding: 7rem 1.5rem 3rem;
+        padding: 6rem 6% 3rem;
+    }
+
+    .form-header {
+        margin-bottom: 3rem;
+    }
+
+    .form-header .eyebrow {
+        font-size: 0.7rem;
     }
 
     .form-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.35rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.2;
     }
 
     .form-description {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.65;
     }
 
     .consultation-form {
-        padding: 2rem 1.5rem;
+        padding: 2.25rem 1.75rem;
     }
 
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+        margin-bottom: 0;
     }
 
     .form-group {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .form-group label {
+        font-size: 0.7rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 1rem 1.125rem;
+    }
+
+    .form-group textarea {
+        min-height: 130px;
+    }
+
+    .form-actions {
+        margin-top: 2.5rem;
     }
 
     .submit-btn {
         width: 100%;
         justify-content: center;
-        padding: 1.25rem 2rem;
+        padding: 1.25rem 2.25rem;
+        font-size: 0.75rem;
+    }
+
+    .form-status {
+        font-size: 0.9rem;
+        margin-top: 1.75rem;
     }
 }
 
 @media (max-width: 480px) {
+    .consultation-container {
+        padding: 5.5rem 5% 2.5rem;
+    }
+
+    .form-header {
+        margin-bottom: 2.5rem;
+    }
+
     .form-header h1 {
-        font-size: 2rem;
+        font-size: 1.95rem;
+    }
+
+    .form-description {
+        font-size: 0.95rem;
     }
 
     .consultation-form {
-        padding: 1.5rem 1rem;
+        padding: 1.85rem 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.95rem;
+        padding: 0.95rem 1rem;
     }
 
     .submit-btn {
         font-size: 0.7rem;
-        padding: 1rem 1.5rem;
+        padding: 1.1rem 2rem;
     }
 }
 

@@ -840,32 +840,205 @@ body.burgundy-theme .header.scrolled .find-btn {
     letter-spacing: 0.05em;
 }
 
-/* Responsive */
+/* Responsive - Mobile First */
 @media (max-width: 768px) {
+
+    /* Header - More compact and touch-friendly */
     .header {
-        padding: 1.5rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .header::after {
+        left: 5%;
+        width: 90%;
+    }
+
+    /* Logo - Smaller on mobile */
+    .logo-svg {
+        height: 4rem;
+    }
+
+    .logo-main {
+        font-size: 1.5rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.65rem;
+    }
+
+    /* Header buttons - Larger touch targets */
+    .menu-btn,
+    .find-btn {
+        font-size: 0.65rem;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .menu-btn span,
+    .find-btn span {
+        display: none;
+        /* Hide text, keep icons only on mobile */
+    }
+
+    .menu-btn svg,
+    .find-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Side Menu - Full width on mobile for easier access */
+    .side-menu {
+        width: 85%;
+        padding: 3rem 2rem;
+    }
+
+    .close-menu-btn {
+        top: 2rem;
+        right: 2rem;
+        font-size: 0.7rem;
+        gap: 0.75rem;
+    }
+
+    .menu-nav {
+        gap: 2rem;
+    }
+
+    .menu-link {
+        font-size: 1.25rem;
+    }
+
+    .theme-selector {
+        margin-top: 3rem;
+    }
+
+    /* Hero Section - Better mobile scaling */
+    .hero-placeholder {
+        top: 8rem;
+        left: 5%;
+        width: 90%;
     }
 
     .hero h1 {
-        font-size: 3rem;
-    }
-
-    .panel h2,
-    .footer-panel h2 {
         font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Panel Content - More breathing room */
     .content-wrapper {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
     }
 
+    .eyebrow {
+        font-size: 0.7rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .panel h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .panel p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Alignment - Center everything on mobile */
     .right-align,
     .left-align {
         text-align: center;
         align-items: center;
     }
 
+    .right-align p,
+    .left-align p {
+        max-width: 100%;
+    }
+
+    /* Buttons - Larger touch targets */
+    .cta-button.primary {
+        padding: 1.25rem 2.5rem;
+        font-size: 0.75rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-button.text-link {
+        font-size: 0.85rem;
+        padding-bottom: 6px;
+    }
+
+    /* Quote Panel - Better mobile sizing */
     .quote-panel blockquote {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
+        line-height: 1.5;
+        padding: 0 1rem;
+    }
+
+    .quote-panel cite {
+        font-size: 0.7rem;
+        margin-top: 2rem;
+    }
+
+    /* Footer Panel - Cleaner mobile layout */
+    .footer-panel {
+        padding: 4rem 1.5rem 2rem 1.5rem;
+    }
+
+    .footer-panel h2 {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-content {
+        padding-top: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+
+    .copyright {
+        font-size: 0.65rem;
+    }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 1.25rem;
+    }
+
+    .logo-svg {
+        height: 3.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .panel h2 {
+        font-size: 1.75rem;
+    }
+
+    .quote-panel blockquote {
+        font-size: 1.15rem;
+    }
+
+    .footer-panel h2 {
+        font-size: 1.85rem;
     }
 }

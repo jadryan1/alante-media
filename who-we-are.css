@@ -560,80 +560,191 @@ body.cream-theme .philosophy-section {
 
 @media (max-width: 768px) {
     .who-we-are-page {
-        padding-top: 6rem;
+        padding-top: 5rem;
     }
 
     .page-hero {
-        padding: 7rem 5% 6rem 5%;
+        padding: 6rem 6% 5rem 6%;
+    }
+
+    .page-hero .eyebrow {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
     }
 
     .page-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin-bottom: 3rem;
     }
 
+    /* Founder Cards - Stack vertically on mobile */
     .hero-founders {
+        grid-template-columns: 1fr;
         gap: 3rem;
+        max-width: 280px;
+    }
+
+    .hero-founder {
+        padding: 1.25rem;
     }
 
     .hero-founder-image {
-        max-width: 140px;
+        max-width: 180px;
     }
 
     .hero-founder-name {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
     }
 
     .hero-founder-title {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
+        line-height: 1.5;
     }
 
+    .hero-founder-hint {
+        font-size: 0.75rem;
+    }
+
+    /* Founder Detail Pages */
     .founder-detail-section {
-        padding: 8rem 5% 3rem 5%;
+        padding: 7rem 6% 3rem 6%;
     }
 
     .founder-content {
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
     .founder-name {
-        font-size: 2rem;
+        font-size: 2.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .founder-title {
+        font-size: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .founder-bio {
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 1.75rem;
+    }
+
+    .interests-title {
+        font-size: 0.7rem;
+    }
+
+    .interests-list {
+        gap: 0.65rem 1.25rem;
+    }
+
+    .interests-list li {
+        font-size: 0.9rem;
+    }
+
+    /* Carousel - Better mobile controls */
+    .carousel-btn {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .carousel-btn.prev {
+        left: 0.75rem;
+    }
+
+    .carousel-btn.next {
+        right: 0.75rem;
+    }
+
+    .carousel-dots {
+        gap: 0.7rem;
+        margin-top: 1.75rem;
+    }
+
+    .dot {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+        padding: 5rem 6%;
+    }
+
+    .philosophy-content h2 {
+        font-size: 2.15rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .philosophy-content p {
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+
+    /* Back Arrow - Larger touch target */
+    .back-arrow {
+        top: 4.75rem;
+        left: 6%;
+        padding: 0.75rem;
+    }
+
+    .back-arrow svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 5rem 5% 4rem 5%;
+    }
+
+    .page-hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-founders {
+        gap: 2.5rem;
+        max-width: 240px;
+    }
+
+    .hero-founder-image {
+        max-width: 160px;
+    }
+
+    .founder-detail-section {
+        padding: 6rem 5% 2.5rem 5%;
+    }
+
+    .founder-name {
+        font-size: 1.85rem;
     }
 
     .founder-bio {
         font-size: 0.95rem;
     }
 
-    .carousel-btn {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .carousel-btn.prev {
-        left: 0.5rem;
-    }
-
-    .carousel-btn.next {
-        right: 0.5rem;
-    }
-
-    .philosophy-section {
-        padding: 6rem 5%;
-    }
-
     .philosophy-content h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .philosophy-content p {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
     }
 
     .back-arrow {
-        top: 5rem;
+        top: 4.5rem;
         left: 5%;
     }
 }
