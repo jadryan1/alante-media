@@ -42,7 +42,7 @@
 
 /* Page Hero */
 .page-hero {
-    padding: 10rem 15% 8rem 15%;
+    padding: 20rem 15% 8rem 15%;
     text-align: center;
 }
 
@@ -59,7 +59,7 @@
     text-transform: uppercase;
     letter-spacing: 0.25em;
     opacity: 0.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 500;
 }
 
@@ -78,7 +78,7 @@
     line-height: 1.6;
     opacity: 0.85;
     max-width: 600px;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 2.8rem auto;
 }
 
 /* Hero Founders */
@@ -179,8 +179,9 @@
 /* Founder Detail Sections */
 .founder-detail-section {
     display: none;
-    padding: 12rem 10% 4rem 10%;
+    padding: 10rem 15% 6rem 15%;
     justify-content: center;
+    align-items: center;
 }
 
 .founder-detail-section.active {
@@ -190,8 +191,8 @@
 /* Back Arrow */
 .back-arrow {
     position: fixed;
-    top: 8rem;
-    left: 13%;
+    top: 7rem;
+    left: 15%;
     background: transparent;
     border: none;
     color: var(--text-color);
@@ -232,8 +233,8 @@
 
 .founder-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
     align-items: start;
     margin-bottom: 2rem;
     max-width: 1400px;
@@ -241,12 +242,15 @@
 }
 
 .founder-profile.reverse .founder-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
 }
 
 /* Founder Info */
 .founder-info {
     padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .founder-name {
@@ -317,11 +321,16 @@
 .founder-carousel {
     width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .carousel-container {
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .carousel-track {
@@ -340,9 +349,10 @@
 }
 
 .carousel-image-placeholder {
-    aspect-ratio: 16/9;
+    height: 500px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,11 +371,11 @@
 /* Carousel Images */
 .carousel-slide img {
     width: 100%;
-    max-height: 400px;
-    object-fit: contain;
+    height: 500px;
+    object-fit: cover;
     object-position: center;
     display: block;
-    border-radius: 4px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -390,45 +400,47 @@ body.cream-theme .carousel-image-placeholder:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    opacity: 0.7;
 }
 
 .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
     transform: translateY(-50%) scale(1.1);
 }
 
+.carousel-btn svg {
+    width: 24px;
+    height: 48px;
+    stroke-width: 1;
+}
+
 .carousel-btn.prev {
-    left: 1rem;
+    left: -2rem;
 }
 
 .carousel-btn.next {
-    right: 1rem;
+    right: -2rem;
 }
 
 /* Cream theme carousel buttons */
 body.cream-theme .carousel-btn {
-    background: rgba(245, 240, 232, 0.8);
-    border-color: rgba(139, 26, 26, 0.3);
     color: #8B1A1A;
 }
 
 body.cream-theme .carousel-btn:hover {
-    background: rgba(245, 240, 232, 0.95);
-    border-color: rgba(139, 26, 26, 0.5);
+    color: #B76E79;
 }
 
 /* Carousel Dots */
@@ -550,11 +562,11 @@ body.cream-theme .philosophy-section {
 
     .back-arrow {
         top: 6rem;
-        left: 8%;
+        left: 10%;
     }
 
     .founder-detail-section {
-        padding: 10rem 8% 4rem 8%;
+        padding: 10rem 10% 4rem 10%;
     }
 }
 
@@ -564,7 +576,7 @@ body.cream-theme .philosophy-section {
     }
 
     .page-hero {
-        padding: 6rem 6% 5rem 6%;
+        padding: 8rem 6% 5rem 6%;
     }
 
     .page-hero .eyebrow {
@@ -613,11 +625,16 @@ body.cream-theme .philosophy-section {
 
     /* Founder Detail Pages */
     .founder-detail-section {
-        padding: 7rem 6% 3rem 6%;
+        padding: 8rem 8% 4rem 8%;
     }
 
     .founder-content {
-        gap: 2.5rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .founder-profile.reverse .founder-content {
+        grid-template-columns: 1fr;
     }
 
     .founder-name {
@@ -649,17 +666,25 @@ body.cream-theme .philosophy-section {
     }
 
     /* Carousel - Better mobile controls */
-    .carousel-btn {
-        width: 2.75rem;
-        height: 2.75rem;
+    .carousel-slide img {
+        height: 350px;
+    }
+
+    .carousel-image-placeholder {
+        height: 350px;
+    }
+
+    .carousel-btn svg {
+        width: 20px;
+        height: 40px;
     }
 
     .carousel-btn.prev {
-        left: 0.75rem;
+        left: -1.5rem;
     }
 
     .carousel-btn.next {
-        right: 0.75rem;
+        right: -1.5rem;
     }
 
     .carousel-dots {
@@ -690,7 +715,7 @@ body.cream-theme .philosophy-section {
     /* Back Arrow - Larger touch target */
     .back-arrow {
         top: 4.75rem;
-        left: 6%;
+        left: 8%;
         padding: 0.75rem;
     }
 
@@ -703,7 +728,7 @@ body.cream-theme .philosophy-section {
 /* Extra small mobile devices */
 @media (max-width: 480px) {
     .page-hero {
-        padding: 5rem 5% 4rem 5%;
+        padding: 7rem 5% 4rem 5%;
     }
 
     .page-hero h1 {
@@ -724,7 +749,7 @@ body.cream-theme .philosophy-section {
     }
 
     .founder-detail-section {
-        padding: 6rem 5% 2.5rem 5%;
+        padding: 7rem 6% 3rem 6%;
     }
 
     .founder-name {
@@ -733,6 +758,14 @@ body.cream-theme .philosophy-section {
 
     .founder-bio {
         font-size: 0.95rem;
+    }
+
+    .carousel-slide img {
+        height: 280px;
+    }
+
+    .carousel-image-placeholder {
+        height: 280px;
     }
 
     .philosophy-content h2 {
@@ -745,6 +778,6 @@ body.cream-theme .philosophy-section {
 
     .back-arrow {
         top: 4.5rem;
-        left: 5%;
+        left: 6%;
     }
 }
