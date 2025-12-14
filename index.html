@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alanté Media Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="light-mode">
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" aria-label="Menu">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
+          <rect width="18" height="1.5"></rect>
+          <rect y="5" width="18" height="1.5"></rect>
+          <rect y="10" width="12" height="1.5"></rect>
+        </svg>
+        <span>Menu</span>
+      </button>
+    </div>
+
+    <div class="header-center">
+      <div class="logo-monogram">
+        <img src="./assets/logos/Alante Logo Vector.svg" alt="Alanté" class="logo-svg">
+        <div class="scrolled-logo-text">
+          <span class="logo-main">ALANTÉ</span>
+          <span class="logo-subtitle">media consulting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="find-btn" aria-label="Find a Consultant">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Book a Consultation</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Slide-out Menu -->
+  <div class="side-menu" id="side-menu">
+    <button class="close-menu-btn" aria-label="Close Menu">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="1" y1="1" x2="13" y2="13"></line>
+        <line x1="1" y1="13" x2="13" y2="1"></line>
+      </svg>
+      <span>CLOSE</span>
+    </button>
+
+    <nav class="menu-nav">
+      <a href="#" class="menu-link">Portfolio</a>
+      <a href="./who-we-are.html" class="menu-link">Who We Are</a>
+      <a href="#" class="menu-link">What We Do</a>
+      <a href="#" class="menu-link">Contact</a>
+      <a href="./index.html" class="menu-link">Home</a>
+    </nav>
+
+    <div class="theme-selector">
+      <span class="theme-label">Color Theme</span>
+      <div class="theme-options">
+        <button class="theme-btn" data-theme="burgundy" aria-label="Burgundy Theme">
+          <span class="theme-color" style="background: #280505;"></span>
+        </button>
+        <button class="theme-btn" data-theme="black" aria-label="Black Theme">
+          <span class="theme-color" style="background: #000000;"></span>
+        </button>
+        <button class="theme-btn" data-theme="cream" aria-label="Cream Theme">
+          <span class="theme-color" style="background: #F5F0E8;"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="scroll-container">
+    <!-- Hero Section -->
+    <section class="scroll-section hero">
+      <div class="hero-bg"></div>
+      <div class="hero-placeholder">
+        <span>Graphic Space</span>
+      </div>
+      <div class="content-wrapper">
+        <!-- Text removed as requested -->
+      </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section class="scroll-section panel">
+      <div class="panel-bg strategy-bg"></div>
+      <div class="content-wrapper left-align">
+        <span class="eyebrow">The Blueprint</span>
+        <h2>Strategy First</h2>
+        <p>We design end-to-end strategic blueprints, guaranteeing your success over scattered content efforts.</p>
+        <button class="cta-button text-link">Explore Strategy</button>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="scroll-section panel">
+      <div class="panel-bg process-bg"></div>
+      <div class="content-wrapper right-align">
+        <span class="eyebrow">The Execution</span>
+        <h2>Accountable Process</h2>
+        <p>Our execution process is verifiable, ensuring actual business expansion and tangible ROI.</p>
+        <button class="cta-button text-link">View Process</button>
+      </div>
+    </section>
+
+    <!-- Brand Section -->
+    <section class="scroll-section panel">
+      <div class="panel-bg brand-bg"></div>
+      <div class="content-wrapper center-align">
+        <span class="eyebrow">The Identity</span>
+        <h2>Brand Loyalty</h2>
+        <p>We define cohesive brand identities that your customers will genuinely feel a part of.</p>
+        <button class="cta-button text-link">See Our Work</button>
+      </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="scroll-section quote-panel">
+      <div class="content-wrapper">
+        <blockquote>
+          "Alanté transformed our disparate marketing efforts into a cohesive empire."
+        </blockquote>
+        <cite>— Executive Director, The Obsidian Group</cite>
+      </div>
+    </section>
+
+    <!-- Footer/Contact Section (Last Snap) -->
+    <section class="scroll-section footer-panel">
+      <div class="content-wrapper">
+        <h2>Begin Your Journey</h2>
+        <button class="cta-button primary">Inquire Now</button>
+
+        <footer class="footer-content">
+          <div class="footer-links">
+            <a href="#">Legal</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Contact</a>
+          </div>
+          <p class="copyright">&copy; 2025 Alanté Media Consulting.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

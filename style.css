@@ -1,0 +1,816 @@
+:root {
+    /* Global */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-speed: 0.6s;
+    --snap-transition: 0.4s;
+
+    /* Enforced Black Theme "For Now" */
+    --bg-color: #000000;
+    --text-color: #F5F5F0;
+    --accent-color: #E6E6E6;
+    --panel-overlay: rgba(0, 0, 0, 0.85);
+
+    /* Solid Black Backgrounds (No Gradients) */
+    --hero-gradient: #000000;
+    --strategy-gradient: #000000;
+    --process-gradient: #000000;
+    --brand-gradient: #000000;
+
+    --button-border: #F5F5F0;
+    --button-text: #F5F5F0;
+    --button-hover-bg: #F5F5F0;
+    --button-hover-text: #000000;
+}
+
+body.burgundy-theme {
+    --bg-color: #0d0000;
+    --text-color: #F5F5F0;
+    --accent-color: #E6E6E6;
+    --panel-overlay: rgba(13, 0, 0, 0.85);
+    --hero-gradient: #0d0000;
+    --strategy-gradient: #0d0000;
+    --process-gradient: #0d0000;
+    --brand-gradient: #0d0000;
+    --button-border: #F5F5F0;
+    --button-text: #F5F5F0;
+    --button-hover-bg: #F5F5F0;
+    --button-hover-text: #0d0000;
+}
+
+body.cream-theme {
+    --bg-color: #F5F0E8;
+    --text-color: #1a1a1a;
+    --accent-color: #3E2723;
+    --panel-overlay: rgba(245, 240, 232, 0.9);
+    --hero-gradient: #F5F0E8;
+    --strategy-gradient: #F5F0E8;
+    --process-gradient: #F5F0E8;
+    --brand-gradient: #F5F0E8;
+    --button-border: #8B1A1A;
+    --button-text: #8B1A1A;
+    --button-hover-bg: #8B1A1A;
+    --button-hover-text: #F5F0E8;
+}
+
+body.dark-mode {
+    /* Dark Mode (Midnight/Silver) - Adjusted to Pure Black */
+    --bg-color: #000000;
+    --text-color: #F5F5F0;
+    --accent-color: #C0C0C0;
+    --panel-overlay: rgba(0, 0, 0, 0.9);
+
+    /* Solid Black */
+    --hero-gradient: #000000;
+    --strategy-gradient: #000000;
+    --process-gradient: #000000;
+    --brand-gradient: #000000;
+
+    --button-border: #E6E6E6;
+    --button-text: #E6E6E6;
+    --button-hover-bg: #E6E6E6;
+    --button-hover-text: #050505;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    line-height: 1.6;
+    overflow: hidden;
+    /* Hide main scroll, handle in canister */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll Snap Container */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 15% 1.5rem 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    color: #fff;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-left,
+.header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+.header-center {
+    flex: 0 0 auto;
+}
+
+/* Header Buttons */
+.menu-btn,
+.find-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.menu-btn:hover,
+.find-btn:hover {
+    opacity: 1;
+}
+
+/* Icons */
+.menu-btn svg,
+.find-btn svg {
+    display: block;
+}
+
+/* Logo Monogram */
+.logo-monogram {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    position: relative;
+    user-select: none;
+}
+
+.logo-svg {
+    height: 6rem;
+    width: auto;
+    display: block;
+    transition: height 0.5s ease;
+    opacity: 1;
+    /* Set to 1 for maximum brightness */
+
+    /* 1. Core Color/Shine (using filter on the SVG content) */
+    filter:
+        brightness(1.5)
+        /* Brighter base */
+        saturate(0.5)
+        /* Less saturated color, closer to silver/grey */
+        contrast(1.5)
+        /* High contrast is essential for sharp reflections */
+        drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+    /* Optional: subtle white glow for extra shine */
+}
+
+.header.scrolled .logo-svg {
+    display: none;
+}
+
+/* Burgundy theme logo color - Rolex Everose chrome effect */
+body.burgundy-theme .logo-svg {
+    filter:
+        brightness(1.3) saturate(1.1) hue-rotate(-10deg) contrast(1.3) drop-shadow(0 2px 4px rgba(200, 126, 87, 0.4)) drop-shadow(0 0 8px rgba(255, 200, 150, 0.2));
+    /* Layered shadows create depth and metallic sheen */
+}
+
+/* Cream theme logo color - Deep red with subtle shadow */
+body.cream-theme .logo-svg {
+    filter:
+        brightness(0.7) saturate(1.2) hue-rotate(-5deg) contrast(1.4) drop-shadow(0 1px 2px rgba(139, 26, 26, 0.3));
+    /* Deep red tone with subtle depth */
+}
+
+/* Cream theme header styling */
+body.cream-theme .header {
+    color: #1a1a1a;
+}
+
+body.cream-theme .menu-btn,
+body.cream-theme .find-btn {
+    color: #3E2723;
+}
+
+body.cream-theme .logo-subtitle {
+    color: #3E2723;
+}
+
+body.cream-theme .header::after {
+    background-color: rgba(62, 39, 35, 0.3);
+}
+
+body.cream-theme .header.scrolled::after {
+    background-color: rgba(139, 26, 26, 0.4);
+}
+
+body.cream-theme .header.scrolled {
+    background-color: rgba(245, 240, 232, 0.85);
+    color: #1a1a1a;
+    mix-blend-mode: normal;
+}
+
+body.cream-theme .header.scrolled .logo-subtitle {
+    color: #3E2723;
+}
+
+body.cream-theme .header.scrolled .menu-btn,
+body.cream-theme .header.scrolled .find-btn {
+    color: #3E2723;
+}
+
+/* Cream theme gradient for ALANTÉ text in scrolled header - Rose gold accent */
+body.cream-theme .logo-main {
+    background: linear-gradient(135deg, #8B1A1A 0%, #B76E79 50%, #8B1A1A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cream theme eyebrow and accent text */
+body.cream-theme .eyebrow {
+    color: #B76E79;
+}
+
+body.cream-theme .cta-button.text-link {
+    color: #8B1A1A;
+}
+
+body.cream-theme .cta-button.text-link:hover {
+    color: #B76E79;
+}
+
+
+.monogram-text {
+    display: block;
+    position: relative;
+}
+
+.monogram-text::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 120%;
+    /* Optional decoration */
+    background: transparent;
+    /* Kept simple for now */
+}
+
+/* Slide-out Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100vh;
+    background-color: #000;
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 3rem;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    transition: opacity 0.3s;
+}
+
+.close-menu-btn:hover {
+    opacity: 0.7;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: left;
+}
+
+.menu-link {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    /* Large but elegant */
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: all 0.4s ease;
+    position: relative;
+    padding-left: 0;
+}
+
+.menu-link:hover {
+    color: #fff;
+    padding-left: 2rem;
+    /* Slide effect on hover */
+}
+
+/* Theme Selector */
+.theme-selector {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.theme-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.theme-btn {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.theme-color {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: block;
+}
+
+
+/* Alternate Logo (Hidden by default) */
+.scrolled-logo-text {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    gap: 0.1rem;
+}
+
+.logo-main {
+    font-size: 2.16rem;
+    /* Increased by 20% from 1.8rem (total 44% from original) */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+/* Burgundy theme gradient for ALANTÉ text in scrolled header */
+body.burgundy-theme .logo-main {
+    background: linear-gradient(45deg, #ee8e71 0%, #5e2323 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-subtitle {
+    font-size: 0.864rem;
+    /* Increased by 20% from 0.72rem (total 44% from original) */
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    opacity: 0.8;
+    margin-top: 0.1rem;
+}
+
+/* Burgundy theme header text colors */
+body.burgundy-theme .header {
+    color: #fcf9da;
+}
+
+body.burgundy-theme .menu-btn,
+body.burgundy-theme .find-btn {
+    color: #fcf9da;
+}
+
+body.burgundy-theme .logo-subtitle {
+    color: #fcf9da;
+}
+
+body.burgundy-theme .header::after {
+    background-color: rgba(252, 249, 218, 0.5);
+}
+
+body.burgundy-theme .header.scrolled::after {
+    background-color: rgba(251, 246, 243, 1);
+}
+
+body.burgundy-theme .header.scrolled {
+    color: #fbf6f3;
+}
+
+body.burgundy-theme .header.scrolled .logo-subtitle {
+    color: #fbf6f3;
+}
+
+body.burgundy-theme .header.scrolled .menu-btn,
+body.burgundy-theme .header.scrolled .find-btn {
+    color: #fbf6f3;
+}
+
+/* Scrolled Header State */
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Translucent semi-dark */
+    backdrop-filter: blur(10px);
+    /* Optional: adds nice glass effect */
+    padding: 2rem 15% 1rem 15%;
+    /* Match white line position */
+    mix-blend-mode: difference;
+    /* Apply blend mode only when scrolled */
+    transition: all 0.5s ease;
+}
+
+.header.scrolled .monogram-text {
+    display: none;
+}
+
+.header.scrolled .scrolled-logo-text {
+    display: flex;
+}
+
+/* Adjust the separator line in scrolled state if needed, or keep as is */
+.header.scrolled::after {
+    opacity: 0.3;
+    /* Subtle reduction */
+}
+
+/* Hero Section */
+.hero {
+    align-items: center;
+    text-align: center;
+}
+
+.hero-bg,
+.panel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease;
+}
+
+.hero-bg {
+    background: var(--hero-gradient);
+}
+
+.strategy-bg {
+    background: var(--strategy-gradient);
+}
+
+.process-bg {
+    background: var(--process-gradient);
+}
+
+.brand-bg {
+    background: var(--brand-gradient);
+}
+
+.hero-placeholder {
+    position: absolute;
+    top: 12.5rem;
+    /* 25% lower than previous 10rem position */
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Content Styling */
+.content-wrapper {
+    position: relative;
+    padding: 0 4rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease 0.3s;
+}
+
+/* Observer Trigger Class */
+.visible .content-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 5vw;
+    /* Responsive large text */
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    opacity: 0.9;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.panel h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.panel p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Alignment Classes */
+.left-align {
+    text-align: left;
+    align-self: flex-start;
+}
+
+.right-align {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.center-align {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Buttons */
+.cta-button {
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.cta-button.primary {
+    border: 1px solid var(--button-border);
+    color: var(--button-text);
+    padding: 1rem 3rem;
+    font-size: 0.8rem;
+}
+
+.cta-button.primary:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.cta-button.text-link {
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.cta-button.text-link:hover {
+    opacity: 0.7;
+    padding-bottom: 2px;
+}
+
+/* Quote Panel */
+.quote-panel {
+    background-color: var(--bg-color);
+    /* Solid bg for text focus */
+    text-align: center;
+}
+
+.quote-panel blockquote {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    line-height: 1.3;
+    max-width: 900px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.quote-panel cite {
+    display: block;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-style: normal;
+}
+
+/* Footer Panel */
+.footer-panel {
+    background-color: #000;
+    /* Always dark for drama at end */
+    color: #fff;
+    text-align: center;
+    justify-content: space-between;
+    padding: 6rem 0 2rem 0;
+}
+
+.footer-panel h2 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.footer-panel .cta-button.primary {
+    border-color: #fff;
+    color: #fff;
+    margin-bottom: auto;
+}
+
+.footer-panel .cta-button.primary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.footer-content {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.copyright {
+    font-size: 0.6rem;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .panel h2,
+    .footer-panel h2 {
+        font-size: 2.5rem;
+    }
+
+    .content-wrapper {
+        padding: 0 2rem;
+    }
+
+    .right-align,
+    .left-align {
+        text-align: center;
+        align-items: center;
+    }
+
+    .quote-panel blockquote {
+        font-size: 1.5rem;
+    }
+}

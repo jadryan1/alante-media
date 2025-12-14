@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who We Are - Alanté Media Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./who-we-are.css">
+</head>
+
+<body class="light-mode">
+    <header class="header scrolled">
+        <div class="header-left">
+            <button class="menu-btn" aria-label="Menu">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
+                    <rect width="18" height="1.5"></rect>
+                    <rect y="5" width="18" height="1.5"></rect>
+                    <rect y="10" width="12" height="1.5"></rect>
+                </svg>
+                <span>Menu</span>
+            </button>
+        </div>
+
+        <div class="header-center">
+            <div class="logo-monogram">
+                <img src="./assets/logos/Alante Logo Vector.svg" alt="Alanté" class="logo-svg">
+                <div class="scrolled-logo-text">
+                    <span class="logo-main">ALANTÉ</span>
+                    <span class="logo-subtitle">media consulting</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button class="find-btn" aria-label="Find a Consultant">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Book a Consultation</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <div class="side-menu" id="side-menu">
+        <button class="close-menu-btn" aria-label="Close Menu">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="1" y1="1" x2="13" y2="13"></line>
+                <line x1="1" y1="13" x2="13" y2="1"></line>
+            </svg>
+            <span>CLOSE</span>
+        </button>
+
+        <nav class="menu-nav">
+            <a href="./index.html" class="menu-link">Portfolio</a>
+            <a href="./who-we-are.html" class="menu-link">Who We Are</a>
+            <a href="#" class="menu-link">What We Do</a>
+            <a href="#" class="menu-link">Contact</a>
+            <a href="./index.html" class="menu-link">Home</a>
+        </nav>
+
+        <div class="theme-selector">
+            <span class="theme-label">Color Theme</span>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="burgundy" aria-label="Burgundy Theme">
+                    <span class="theme-color" style="background: #280505;"></span>
+                </button>
+                <button class="theme-btn" data-theme="black" aria-label="Black Theme">
+                    <span class="theme-color" style="background: #000000;"></span>
+                </button>
+                <button class="theme-btn" data-theme="cream" aria-label="Cream Theme">
+                    <span class="theme-color" style="background: #F5F0E8;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="scroll-container">
+        <!-- Hero Section -->
+        <section class="scroll-section page-hero">
+            <div class="page-hero-content">
+                <span class="eyebrow">The Visionaries</span>
+                <h1>Who We Are</h1>
+                <p class="hero-subtitle">Two minds united by a singular vision: to redefine excellence in media
+                    consulting.</p>
+            </div>
+        </section>
+
+        <!-- Founder 1 Section -->
+        <section class="scroll-section founder-section">
+            <article class="founder-profile">
+                <div class="founder-content">
+                    <div class="founder-image-main">
+                        <div class="image-placeholder">
+                            <span>Jadryan Tejeda</span>
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h2 class="founder-name">Jadryan Tejeda</h2>
+                        <span class="founder-title">Co-Founder & Strategic Director</span>
+                        <p class="founder-bio">
+                            With over a decade of experience in strategic brand development and digital transformation,
+                            Jadryan brings
+                            a unique blend of creative vision and analytical precision to every project. His approach
+                            combines data-driven
+                            insights with an innate understanding of cultural zeitgeist, ensuring brands not only reach
+                            their audience
+                            but resonate deeply with them. Jadryan's work has been recognized across industries for its
+                            innovative approach
+                            to storytelling and measurable impact on brand equity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carousel for additional images -->
+                <div class="founder-carousel">
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev" aria-label="Previous">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 1</span>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 2</span>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" aria-label="Next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Founder 2 Section -->
+        <section class="scroll-section founder-section">
+            <article class="founder-profile reverse">
+                <div class="founder-content">
+                    <div class="founder-image-main">
+                        <div class="image-placeholder">
+                            <span>Jared Cruz</span>
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h2 class="founder-name">Jared Cruz</h2>
+                        <span class="founder-title">Co-Founder & Creative Director</span>
+                        <p class="founder-bio">
+                            Jared's multidisciplinary background spans visual design, content strategy, and brand
+                            architecture.
+                            His philosophy centers on creating cohesive brand experiences that transcend traditional
+                            marketing boundaries.
+                            Known for his meticulous attention to detail and ability to distill complex narratives into
+                            compelling visual
+                            stories, Jared has helped numerous organizations elevate their presence in increasingly
+                            competitive markets.
+                            His work reflects a commitment to authenticity and lasting impact.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carousel for additional images -->
+                <div class="founder-carousel">
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev" aria-label="Previous">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 1</span>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 2</span>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder">
+                                    <span>Moment 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" aria-label="Next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="scroll-section philosophy-section">
+            <div class="philosophy-content">
+                <span class="eyebrow">Our Philosophy</span>
+                <h2>Excellence Through Collaboration</h2>
+                <p>
+                    Together, we've built Alanté on the foundation that true excellence emerges from the synthesis of
+                    strategic thinking and creative execution. Our complementary expertise allows us to approach each
+                    project holistically, ensuring every touchpoint reflects the sophistication and intentionality our
+                    clients deserve.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/who-we-are.js"></script>
+</body>
+
+</html>

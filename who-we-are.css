@@ -1,0 +1,456 @@
+/* Scroll Snap Container - matching home page */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-section {
+    min-height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Content wrapper fade-in */
+.scroll-section .page-hero-content,
+.scroll-section .founder-profile,
+.scroll-section .philosophy-content {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease 0.3s;
+}
+
+.scroll-section.visible .page-hero-content,
+.scroll-section.visible .founder-profile,
+.scroll-section.visible .philosophy-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page Hero */
+.page-hero {
+    padding: 6rem 15% 8rem 15%;
+    text-align: center;
+}
+
+.page-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Founders Section */
+.founder-section {
+    padding: 0 10%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.founder-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+.founder-profile.reverse .founder-content {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.founder-profile.reverse .founder-image-main {
+    order: 2;
+}
+
+.founder-profile.reverse .founder-info {
+    order: 1;
+    text-align: right;
+}
+
+/* Founder Image */
+.founder-image-main {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.image-placeholder:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Cream theme image placeholders */
+body.cream-theme .image-placeholder {
+    background: linear-gradient(135deg, rgba(139, 26, 26, 0.03) 0%, rgba(183, 110, 121, 0.02) 100%);
+    border: 1px solid rgba(139, 26, 26, 0.15);
+    color: rgba(62, 39, 35, 0.4);
+}
+
+body.cream-theme .image-placeholder:hover {
+    background: linear-gradient(135deg, rgba(139, 26, 26, 0.06) 0%, rgba(183, 110, 121, 0.04) 100%);
+    border-color: rgba(139, 26, 26, 0.25);
+}
+
+/* Founder Info */
+.founder-info {
+    padding-top: 2rem;
+}
+
+.founder-name {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.founder-title {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.founder-bio {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Carousel */
+.founder-carousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-image-placeholder {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.carousel-image-placeholder:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Cream theme carousel placeholders */
+body.cream-theme .carousel-image-placeholder {
+    background: linear-gradient(135deg, rgba(139, 26, 26, 0.02) 0%, rgba(183, 110, 121, 0.01) 100%);
+    border: 1px solid rgba(139, 26, 26, 0.1);
+    color: rgba(62, 39, 35, 0.3);
+}
+
+body.cream-theme .carousel-image-placeholder:hover {
+    background: linear-gradient(135deg, rgba(139, 26, 26, 0.04) 0%, rgba(183, 110, 121, 0.02) 100%);
+    border-color: rgba(139, 26, 26, 0.2);
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+/* Cream theme carousel buttons */
+body.cream-theme .carousel-btn {
+    background: rgba(245, 240, 232, 0.8);
+    border-color: rgba(139, 26, 26, 0.3);
+    color: #8B1A1A;
+}
+
+body.cream-theme .carousel-btn:hover {
+    background: rgba(245, 240, 232, 0.95);
+    border-color: rgba(139, 26, 26, 0.5);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.3);
+}
+
+/* Cream theme dots */
+body.cream-theme .dot {
+    background: rgba(139, 26, 26, 0.2);
+}
+
+body.cream-theme .dot:hover {
+    background: rgba(139, 26, 26, 0.4);
+}
+
+body.cream-theme .dot.active {
+    background: #8B1A1A;
+}
+
+/* Founder Divider */
+.founder-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 100%);
+    margin: 8rem 0;
+}
+
+body.cream-theme .founder-divider {
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(139, 26, 26, 0.2) 50%,
+            transparent 100%);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 8rem 15%;
+    text-align: center;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            transparent 100%);
+}
+
+body.cream-theme .philosophy-section {
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(139, 26, 26, 0.02) 50%,
+            transparent 100%);
+}
+
+.philosophy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.philosophy-content h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+}
+
+.philosophy-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .founder-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .founder-profile.reverse .founder-content {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-profile.reverse .founder-image-main {
+        order: 1;
+    }
+
+    .founder-profile.reverse .founder-info {
+        order: 2;
+        text-align: left;
+    }
+
+    .page-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .founder-name {
+        font-size: 2.5rem;
+    }
+
+    .philosophy-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .who-we-are-page {
+        padding-top: 6rem;
+    }
+
+    .page-hero {
+        padding: 4rem 5% 6rem 5%;
+    }
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .founders-section {
+        padding: 0 5%;
+    }
+
+    .founder-content {
+        gap: 2rem;
+    }
+
+    .founder-name {
+        font-size: 2rem;
+    }
+
+    .founder-bio {
+        font-size: 1rem;
+    }
+
+    .carousel-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .carousel-btn.prev {
+        left: 0.5rem;
+    }
+
+    .carousel-btn.next {
+        right: 0.5rem;
+    }
+
+    .philosophy-section {
+        padding: 6rem 5%;
+    }
+
+    .philosophy-content h2 {
+        font-size: 2rem;
+    }
+
+    .philosophy-content p {
+        font-size: 1.05rem;
+    }
+}
