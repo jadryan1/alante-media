@@ -26,7 +26,6 @@
 
 /* Content wrapper fade-in */
 .scroll-section .page-hero-content,
-.scroll-section .founder-profile,
 .scroll-section .philosophy-content {
     opacity: 0;
     transform: translateY(40px);
@@ -34,7 +33,6 @@
 }
 
 .scroll-section.visible .page-hero-content,
-.scroll-section.visible .founder-profile,
 .scroll-section.visible .philosophy-content {
     opacity: 1;
     transform: translateY(0);
@@ -95,19 +93,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1.5rem;
     border-radius: 8px;
-}
-
-.hero-founder:hover {
-    transform: translateY(-8px);
-}
-
-.hero-founder:hover .hero-founder-image {
-    transform: scale(1.05);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .hero-founder-image {
@@ -117,7 +104,6 @@
     max-width: 200px;
     overflow: hidden;
     border-radius: 4px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -126,11 +112,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-founder:hover .hero-founder-image img {
-    transform: scale(1.1);
 }
 
 .hero-founder-name {
@@ -139,11 +120,6 @@
     font-weight: 400;
     margin: 0;
     letter-spacing: -0.01em;
-    transition: all 0.3s ease;
-}
-
-.hero-founder:hover .hero-founder-name {
-    opacity: 0.7;
 }
 
 .hero-founder-title {
@@ -153,336 +129,6 @@
     opacity: 0.6;
     text-align: center;
     line-height: 1.4;
-    transition: all 0.3s ease;
-}
-
-.hero-founder:hover .hero-founder-title {
-    opacity: 0.8;
-}
-
-.hero-founder-hint {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    opacity: 0;
-    transform: translateY(-5px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--text-color);
-    font-weight: 400;
-    margin-top: 0.5rem;
-}
-
-.hero-founder:hover .hero-founder-hint {
-    opacity: 0.5;
-    transform: translateY(0);
-}
-
-/* Founder Detail Sections */
-.founder-detail-section {
-    display: none;
-    padding: 10rem 15% 6rem 15%;
-    justify-content: center;
-    align-items: center;
-}
-
-.founder-detail-section.active {
-    display: flex;
-}
-
-/* Back Arrow */
-.back-arrow {
-    position: fixed;
-    top: 7rem;
-    left: 15%;
-    background: transparent;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-.back-arrow:hover {
-    opacity: 1;
-    transform: translateX(-4px);
-}
-
-.back-arrow svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Founders Section */
-.founder-section {
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.founder-profile {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.founder-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 6rem;
-    align-items: start;
-    margin-bottom: 2rem;
-    max-width: 1400px;
-    width: 100%;
-}
-
-.founder-profile.reverse .founder-content {
-    grid-template-columns: 1fr 1.2fr;
-}
-
-/* Founder Info */
-.founder-info {
-    padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.founder-name {
-    font-family: var(--font-serif);
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.01em;
-}
-
-.founder-title {
-    display: block;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    opacity: 0.6;
-    margin-bottom: 1.5rem;
-}
-
-.founder-bio {
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 300;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-/* Founder Interests */
-.founder-interests {
-    margin-top: 2rem;
-}
-
-.interests-title {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    opacity: 0.6;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.interests-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-}
-
-.interests-list li {
-    font-size: 0.95rem;
-    font-weight: 300;
-    opacity: 0.85;
-    position: relative;
-    padding-left: 1rem;
-}
-
-.interests-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    opacity: 0.5;
-}
-
-/* Carousel */
-.founder-carousel {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.carousel-slide {
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-
-.carousel-image-placeholder {
-    height: 500px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.25);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    transition: all 0.4s ease;
-}
-
-.carousel-image-placeholder:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Carousel Images */
-.carousel-slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-body.cream-theme .carousel-slide img {
-    background: rgba(245, 240, 232, 0.3);
-}
-
-/* Cream theme carousel placeholders */
-body.cream-theme .carousel-image-placeholder {
-    background: linear-gradient(135deg, rgba(139, 26, 26, 0.02) 0%, rgba(183, 110, 121, 0.01) 100%);
-    border: 1px solid rgba(139, 26, 26, 0.1);
-    color: rgba(62, 39, 35, 0.3);
-}
-
-body.cream-theme .carousel-image-placeholder:hover {
-    background: linear-gradient(135deg, rgba(139, 26, 26, 0.04) 0%, rgba(183, 110, 121, 0.02) 100%);
-    border-color: rgba(139, 26, 26, 0.2);
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: var(--text-color);
-    width: auto;
-    height: auto;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    opacity: 0.7;
-}
-
-.carousel-btn:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-btn svg {
-    width: 24px;
-    height: 48px;
-    stroke-width: 1;
-}
-
-.carousel-btn.prev {
-    left: -2rem;
-}
-
-.carousel-btn.next {
-    right: -2rem;
-}
-
-/* Cream theme carousel buttons */
-body.cream-theme .carousel-btn {
-    color: #8B1A1A;
-}
-
-body.cream-theme .carousel-btn:hover {
-    color: #B76E79;
-}
-
-/* Carousel Dots */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-top: 2rem;
-}
-
-.dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.dot:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.2);
-}
-
-.dot.active {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.3);
-}
-
-/* Cream theme dots */
-body.cream-theme .dot {
-    background: rgba(139, 26, 26, 0.2);
-}
-
-body.cream-theme .dot:hover {
-    background: rgba(139, 26, 26, 0.4);
-}
-
-body.cream-theme .dot.active {
-    background: #8B1A1A;
 }
 
 /* Philosophy Section */
@@ -521,7 +167,7 @@ body.cream-theme .philosophy-section {
     font-size: 1.2rem;
     line-height: 1.8;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* Responsive Design */
@@ -539,34 +185,12 @@ body.cream-theme .philosophy-section {
         font-size: 1.3rem;
     }
 
-    .founder-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .founder-profile.reverse .founder-content {
-        grid-template-columns: 1fr;
-    }
-
     .page-hero h1 {
         font-size: 3.5rem;
     }
 
-    .founder-name {
-        font-size: 2.5rem;
-    }
-
     .philosophy-content h2 {
         font-size: 2.5rem;
-    }
-
-    .back-arrow {
-        top: 6rem;
-        left: 10%;
-    }
-
-    .founder-detail-section {
-        padding: 10rem 10% 4rem 10%;
     }
 }
 
@@ -590,9 +214,11 @@ body.cream-theme .philosophy-section {
     }
 
     .hero-subtitle {
-        font-size: 1.05rem;
-        line-height: 1.65;
+        font-size: 1.1rem;
+        line-height: 1.7;
         margin-bottom: 3rem;
+        opacity: 1;
+        /* Full opacity for mobile readability */
     }
 
     /* Founder Cards - Stack vertically on mobile */
@@ -619,84 +245,6 @@ body.cream-theme .philosophy-section {
         line-height: 1.5;
     }
 
-    .hero-founder-hint {
-        font-size: 0.75rem;
-    }
-
-    /* Founder Detail Pages */
-    .founder-detail-section {
-        padding: 8rem 8% 4rem 8%;
-    }
-
-    .founder-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .founder-profile.reverse .founder-content {
-        grid-template-columns: 1fr;
-    }
-
-    .founder-name {
-        font-size: 2.25rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .founder-title {
-        font-size: 0.75rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .founder-bio {
-        font-size: 1rem;
-        line-height: 1.75;
-        margin-bottom: 1.75rem;
-    }
-
-    .interests-title {
-        font-size: 0.7rem;
-    }
-
-    .interests-list {
-        gap: 0.65rem 1.25rem;
-    }
-
-    .interests-list li {
-        font-size: 0.9rem;
-    }
-
-    /* Carousel - Better mobile controls */
-    .carousel-slide img {
-        height: 350px;
-    }
-
-    .carousel-image-placeholder {
-        height: 350px;
-    }
-
-    .carousel-btn svg {
-        width: 20px;
-        height: 40px;
-    }
-
-    .carousel-btn.prev {
-        left: -1.5rem;
-    }
-
-    .carousel-btn.next {
-        right: -1.5rem;
-    }
-
-    .carousel-dots {
-        gap: 0.7rem;
-        margin-top: 1.75rem;
-    }
-
-    .dot {
-        width: 0.6rem;
-        height: 0.6rem;
-    }
-
     /* Philosophy Section */
     .philosophy-section {
         padding: 5rem 6%;
@@ -708,20 +256,10 @@ body.cream-theme .philosophy-section {
     }
 
     .philosophy-content p {
-        font-size: 1.05rem;
-        line-height: 1.75;
-    }
-
-    /* Back Arrow - Larger touch target */
-    .back-arrow {
-        top: 4.75rem;
-        left: 8%;
-        padding: 0.75rem;
-    }
-
-    .back-arrow svg {
-        width: 22px;
-        height: 22px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 1;
+        /* Full opacity for mobile readability */
     }
 }
 
@@ -748,36 +286,11 @@ body.cream-theme .philosophy-section {
         max-width: 160px;
     }
 
-    .founder-detail-section {
-        padding: 7rem 6% 3rem 6%;
-    }
-
-    .founder-name {
-        font-size: 1.85rem;
-    }
-
-    .founder-bio {
-        font-size: 0.95rem;
-    }
-
-    .carousel-slide img {
-        height: 280px;
-    }
-
-    .carousel-image-placeholder {
-        height: 280px;
-    }
-
     .philosophy-content h2 {
         font-size: 1.75rem;
     }
 
     .philosophy-content p {
         font-size: 0.95rem;
-    }
-
-    .back-arrow {
-        top: 4.5rem;
-        left: 6%;
     }
 }

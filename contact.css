@@ -546,7 +546,8 @@ body.cream-theme .form-footer a {
     .form-group input,
     .form-group textarea {
         font-size: 1rem;
-        padding: 1rem 1.125rem;
+        padding: 1.125rem 1.125rem;
+        /* Increased padding for better touch targets (min 44px height) */
     }
 
     .form-group textarea {

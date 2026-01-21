@@ -72,7 +72,7 @@ body {
     font-family: var(--font-sans);
     font-size: 1.15rem;
     color: var(--text-color);
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1.7;
 }
 
@@ -116,7 +116,7 @@ body {
     font-family: var(--font-sans);
     font-size: 1.15rem;
     color: var(--text-color);
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1.7;
     margin-bottom: 3rem;
     max-width: 900px;
@@ -130,6 +130,12 @@ body {
     margin-top: 2.5rem;
 }
 
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .service-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -138,6 +144,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 body.cream-theme .service-card {
@@ -288,7 +295,8 @@ body.cream-theme .service-card:hover {
     }
 
     .service-pillar {
-        margin-bottom: 5rem;
+        margin-bottom: 4rem;
+        /* Reduced spacing for better mobile scrolling */
     }
 
     .pillar-header {
@@ -321,7 +329,9 @@ body.cream-theme .service-card:hover {
     }
 
     .pillar-description {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        opacity: 1;
+        /* Full opacity for mobile readability */
     }
 
     .service-card>p {

@@ -361,7 +361,8 @@ body.cream-theme .form-group select {
     .form-group select,
     .form-group textarea {
         font-size: 1rem;
-        padding: 1rem 1.125rem;
+        padding: 1.125rem 1.125rem;
+        /* Increased padding for better touch targets (min 44px height) */
     }
 
     .form-group textarea {
@@ -375,7 +376,8 @@ body.cream-theme .form-group select {
     .submit-btn {
         width: 100%;
         justify-content: center;
-        padding: 1.25rem 2.25rem;
+        padding: 1.375rem 2.25rem;
+        /* Increased padding for minimum 44px touch target */
         font-size: 0.75rem;
     }
 
