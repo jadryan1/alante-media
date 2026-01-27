@@ -9,8 +9,16 @@ html.className = `${savedTheme}-theme`;
 // Theme toggle button
 const themeToggle = document.querySelector('.theme-toggle');
 
+const applyTheme = (theme) => {
+    const themeClass = `${theme}-theme`;
+    document.documentElement.className = themeClass;
+    document.body.className = themeClass;
+    localStorage.setItem('colorTheme', theme);
+};
+
 // Set initial toggle state
 const updateToggleState = (theme) => {
+    if (!themeToggle) return;
     if (theme === 'cream') {
         themeToggle.classList.add('light');
     } else {
@@ -23,17 +31,10 @@ updateToggleState(savedTheme);
 // Add click handler
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-        const currentTheme = body.className.replace('-theme', '');
+        const currentTheme = document.documentElement.className.replace('-theme', '');
         const newTheme = currentTheme === 'burgundy' ? 'cream' : 'burgundy';
 
-        // Update body and html class
-        body.className = `${newTheme}-theme`;
-        html.className = `${newTheme}-theme`;
-
-        // Save to localStorage
-        localStorage.setItem('colorTheme', newTheme);
-
-        // Update toggle state
+        applyTheme(newTheme);
         updateToggleState(newTheme);
     });
 }
@@ -89,6 +90,18 @@ const headerObserver = new IntersectionObserver((entries) => {
 const heroSection = document.querySelector('.hero');
 if (heroSection) {
     headerObserver.observe(heroSection);
+} else {
+    // Fallback for pages without a hero (like Portfolio)
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    });
 }
 
 // Auto-snap scroll behavior - smooth snapping in both directions
@@ -120,4 +133,8 @@ if (scrollContainer) {
         }
     });
 }
+
+
+// End of main logic
+
 

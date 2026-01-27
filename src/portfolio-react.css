@@ -1,0 +1,195 @@
+/* Lenis Recommended Styles */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Portfolio Layout */
+.portfolio-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    /* Main background should be black #0e0e0e in theme */
+    padding: 180px 5% 100px 5%;
+    /* 24px side padding as per analysis */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-header {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.portfolio-main-title {
+    font-family: var(--font-serif);
+    /* Use the elegant serif */
+    font-size: clamp(1.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--text-color);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on desktop */
+    column-gap: 24px;
+    row-gap: 100px;
+    /* Adjusted vertical breathing room for 3-col layout */
+    width: 100%;
+    max-width: 1200px;
+    align-items: start;
+}
+
+/* Portfolio Item Styling */
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+}
+
+.item-media-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    /* Space between image and text */
+    background-color: #1a1a1a;
+}
+
+.item-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+}
+
+.portfolio-item:hover .item-media {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.portfolio-item:hover .media-overlay {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle divider if desired, or just space */
+    border-top: none;
+    /* Actually, let's keep it clean like the target */
+}
+
+.item-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.item-icon {
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.portfolio-item:hover .item-icon {
+    transform: rotate(90deg);
+    opacity: 1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablet/mobile */
+        row-gap: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 100px 16px 60px 16px;
+    }
+
+    .portfolio-main-title {
+        font-size: 1.6rem;
+        margin-bottom: 40px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Stay 2 columns even on mobile */
+        column-gap: 12px;
+        row-gap: 80px;
+    }
+
+    .item-media-wrapper {
+        margin-bottom: 16px;
+    }
+}
+
+/* Footer */
+.portfolio-footer {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 160px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-line {
+    display: none;
+}
+
+.portfolio-footer p {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+}

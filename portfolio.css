@@ -1,0 +1,52 @@
+/* Portfolio Page Specific Styles */
+
+body.portfolio-page {
+    overflow-y: auto !important;
+    background-color: var(--bg-color);
+}
+
+.portfolio-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.portfolio-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-monogram img {
+    height: 80px;
+    width: auto;
+    filter: brightness(1.5);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ensure the root doesn't have a fixed height that stops scrolling */
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
