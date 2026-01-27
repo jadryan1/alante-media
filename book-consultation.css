@@ -421,6 +421,42 @@ body.cream-theme .form-group select {
     }
 }
 
+/* iPhone SE and very small devices */
+@media (max-width: 375px) {
+    .consultation-container {
+        padding: 5rem 4% 2rem;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .form-description {
+        font-size: 0.9rem;
+    }
+
+    .consultation-form {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.65rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        padding: 0.875rem 0.875rem;
+    }
+
+    .submit-btn {
+        font-size: 0.65rem;
+        padding: 1rem 1.5rem;
+        min-height: 44px;
+    }
+}
+
 /* Loading State */
 .submit-btn.loading .btn-text::after {
     content: '';

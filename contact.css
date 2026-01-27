@@ -623,3 +623,59 @@ body.cream-theme .form-footer a {
         padding: 1rem 1.75rem;
     }
 }
+
+/* iPhone SE and very small devices */
+@media (max-width: 375px) {
+    .contact-container {
+        padding: 5rem 4% 2rem;
+    }
+
+    .contact-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .contact-info-section h2,
+    .contact-form-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-intro {
+        font-size: 0.95rem;
+    }
+
+    .contact-method {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .method-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .method-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .method-details a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .compact-consultation-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        padding: 0.875rem 0.875rem;
+    }
+
+    .submit-btn {
+        font-size: 0.65rem;
+        padding: 0.875rem 1.5rem;
+        min-height: 44px;
+    }
+}

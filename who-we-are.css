@@ -294,3 +294,52 @@ body.cream-theme .philosophy-section {
         font-size: 0.95rem;
     }
 }
+
+/* iPhone SE and very small devices */
+@media (max-width: 375px) {
+    .page-hero {
+        padding: 6.5rem 4% 3rem 4%;
+    }
+
+    .page-hero h1 {
+        font-size: 1.65rem;
+    }
+
+    .page-hero .eyebrow {
+        font-size: 0.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-founders {
+        gap: 2rem;
+        max-width: 220px;
+    }
+
+    .hero-founder-image {
+        max-width: 140px;
+    }
+
+    .hero-founder-name {
+        font-size: 1.2rem;
+    }
+
+    .hero-founder-title {
+        font-size: 0.6rem;
+    }
+
+    .philosophy-section {
+        padding: 4rem 5%;
+    }
+
+    .philosophy-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .philosophy-content p {
+        font-size: 0.9rem;
+    }
+}

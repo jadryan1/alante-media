@@ -171,6 +171,40 @@ html.lenis body {
     }
 }
 
+/* iPhone SE and very small devices */
+@media (max-width: 375px) {
+    .portfolio-section {
+        padding: 90px 12px 50px 12px;
+    }
+
+    .portfolio-main-title {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-grid {
+        column-gap: 8px;
+        row-gap: 60px;
+    }
+
+    .item-media-wrapper {
+        margin-bottom: 12px;
+    }
+
+    .item-title {
+        font-size: 9px;
+    }
+
+    .portfolio-footer {
+        margin-top: 100px;
+        padding-top: 24px;
+    }
+
+    .portfolio-footer p {
+        font-size: 10px;
+    }
+}
+
 /* Footer */
 .portfolio-footer {
     width: 100%;
